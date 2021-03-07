@@ -22,7 +22,7 @@ body {
 }
 
 /* This makes "#popup-with-something" scale down proportionally */
-#popup-with-something {
+.modal-popup {
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -37,7 +37,7 @@ body {
   right: 1px;
 }
 /* This is an element itself */
-#popup-with-something > div {
+.some-element {
   color: black;
   background: #EBE8E8;
   position: absolute;
@@ -46,4 +46,9 @@ body {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+  overflow: scroll;
+}
+
+.inner-image {
+  width: 100px;
 }
