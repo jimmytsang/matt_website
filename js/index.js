@@ -50,6 +50,12 @@ function setupCarousel() {
             gallery: {enabled:true}
             // other options
         });
+
+        $('.open-popup-link').magnificPopup({
+            type:'inline',
+            midClick: true,
+            mainClass: 'custom-popup-class'
+        });
     }
 }
 
@@ -117,17 +123,6 @@ function setupFooter() {
     }  			
     }
 
-// test
-$('.slider-product').each(function(){
-    var $this = $(this);				
-    $this.slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,               
-        dots: false,
-        infinite: true, 
-    }); 
-});
-
 // Everything is loaded including images.
 $(window).on("load", function(){
 
@@ -167,40 +162,7 @@ $(window).on("load", function(){
         setupNav();
         setupNavToggle();
         setupFooter();
-
-        // test
-        $('.slider-product').each(function(){
-            var $this = $(this);
-    
-            $this.on('setPosition', function () {
-                $(this).find('.slick-slide').height('auto');
-                var slickTrack = $(this).find('.slick-track');
-                var slickTrackHeight = $(slickTrack).height();
-                $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-            });
-        });  
-    
-        $("body").on("click",".product-buy-click",function(e){
-            e.preventDefault();
-            var id = $(this).data("id");
-            var name = $(this).data("name");
-            var text = $(this).data("text");
-            $("#modalClick")
-                .find(".modal-title").empty().append(name).end()
-                .find(".modal-body").empty().append(text+id).end()					
-                .modal("show");
-        }) 
-        //test
-
-        $(document).ready(function(){
-            $('.your-class').slick();
-          });
-          
-          $('.modal').on('shown.bs.modal', function (e) {
-            $('.your-class').slick('setPosition');
-            $('.wrap-modal-slider').addClass('open');
-          })
-
+        
         // Resize Carousel upon window resize
         $(window).resize(function() {
             setupCarousel();
