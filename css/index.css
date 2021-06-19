@@ -18,7 +18,7 @@ body {
 /* This adds max-width to popup content */
 .custom-popup-class .mfp-content {
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
 }
 
 /* This makes "#popup-with-something" scale down proportionally */
@@ -49,6 +49,18 @@ body {
   overflow: scroll;
 }
 
+.row-content {
+  padding-top: 10px;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
 .inner-image {
-  width: 100px;
+  width: 800px;
+  margin: auto;
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: 600;
 }
